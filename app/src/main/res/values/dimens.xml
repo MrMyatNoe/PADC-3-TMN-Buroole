@@ -1,0 +1,21 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margin_left">8dp</dimen>
+    <dimen name="margin_right">8dp</dimen>
+    <dimen name="collapsing_tool_bar_height">300dp</dimen>
+    <dimen name="layout_height_collapsing_tool_bar">210dp</dimen>
+    <dimen name="title_size">28sp</dimen>
+    <dimen name="padding_for_drawable">4dp</dimen>
+    <dimen name="padding_for_textView">16dp</dimen>
+    <dimen name="marTop_for_subtitle">48dp</dimen>
+    <dimen name="marTop_for_subtitle_latter">48dp</dimen>
+    <dimen name="marTop_for_recycleView">32dp</dimen>
+    <dimen name="marbtm_for_textView">4dp</dimen>
+    <dimen name="marTop_for_textView">8dp</dimen>
+    <dimen name="marTop_for_view">8dp</dimen>
+    <dimen name="textSize_for_subtitle">14sp</dimen>
+    <dimen name="textSize_for_seeMore">16sp</dimen>
+    <dimen name="textSize_for_bold">20sp</dimen>
+    <dimen name="marTop_for_bold">4dp</dimen>
+    <dimen name="height_for_view">2dp</dimen>
+</resources>

@@ -1,0 +1,116 @@
+<android.support.v7.widget.CardView android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_promotion_item"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/food_burger"
+            android:scaleType="fitXY"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_promotion_detail"
+            android:layout_width="200dp"
+            android:layout_height="200dp">
+
+            <TextView
+                android:id="@+id/tv_burpple_exclusive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/btn_round_corners_radius_16dp"
+                android:padding="4dp"
+                android:text="Burpple Exvclusive"
+                android:textColor="@color/white_full"
+                android:textAllCaps="true"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_promotion_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_burpple_exclusive"
+                android:layout_alignLeft="@id/tv_burpple_exclusive"
+                android:layout_marginTop="8dp"
+                android:text="1 for 1 shabu"
+                android:textColor="@color/white_full"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_promotion_meal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_promotion_discount"
+                android:layout_alignLeft="@id/tv_burpple_exclusive"
+                android:layout_marginTop="8dp"
+                android:text="Burger"
+                android:textColor="@color/white_full"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/divider_promotion"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignLeft="@id/tv_burpple_exclusive"
+                android:layout_below="@id/tv_promotion_meal"
+                android:layout_marginTop="8dp"
+                android:background="@color/divider" />
+
+            <TextView
+                android:id="@+id/tv_promotion_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_burpple_exclusive"
+                android:layout_below="@id/divider_promotion"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Till 31st Jan 18"
+                android:textAllCaps="true"
+                android:textColor="@color/white_full"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_promotion_item"
+            android:background="@color/accent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_shop_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="KFC"
+                android:textColor="@color/white_full"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_reviewer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:paddingBottom="8dp"
+                android:text="Kent Ridge"
+                android:textColor="@color/white_full"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
