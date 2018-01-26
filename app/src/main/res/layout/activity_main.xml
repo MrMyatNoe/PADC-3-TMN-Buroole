@@ -1,281 +1,397 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.myanmar.tmn.buroole.activities.MainActivity"
-    android:fitsSystemWindows="true">
+    android:id="@+id/drawerLayout">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBar"
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.myanmar.tmn.buroole.activities.MainActivity">
 
-        <android.support.design.widget.CollapsingToolbarLayout
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/collapsing_tool_bar_height"
-            android:fitsSystemWindows="true"
-            app:contentScrim="@color/primary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/vp_burpple_image_details"
+            <android.support.design.widget.CollapsingToolbarLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fitsSystemWindows="true" />
+                android:layout_height="@dimen/collapsing_tool_bar_height"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/primary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/layout_height_collapsing_tool_bar">
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_burpple_image_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true" />
 
-                <TextView
-                    android:id="@+id/tv_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:text="@string/burpple_title"
-                    android:textColor="@color/white_full"
-                    android:textSize="@dimen/title_size" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_height_collapsing_tool_bar"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/burpple_title"
+                        android:textColor="@color/white_full"
+                        android:textSize="@dimen/title_size" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_title"
+                        android:layout_marginLeft="@dimen/margin_left"
+                        android:layout_marginRight="@dimen/margin_right">
+
+                        <EditText
+                            android:id="@+id/ed_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_right"
+                            android:layout_marginStart="@dimen/margin_left"
+                            android:drawablePadding="@dimen/padding_for_drawable"
+                            android:drawableStart="@drawable/ic_search_black_24dp"
+                            android:hint="@string/search_something" />
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+                <!--<android.support.v7.widget.Toolbar
+                    android:layout_below="@id/tv_title"
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="center"
+                    app:layout_collapseMode="pin">
 
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_title"
-                    android:layout_marginLeft="@dimen/margin_left"
-                    android:layout_marginRight="@dimen/margin_right">
+                    android:layout_marginRight="12dp">
 
                     <EditText
                         android:id="@+id/ed_search"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/margin_right"
-                        android:layout_marginStart="@dimen/margin_left"
-                        android:drawablePadding="@dimen/padding_for_drawable"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:drawablePadding="4dp"
                         android:drawableStart="@drawable/ic_search_black_24dp"
                         android:hint="@string/search_something" />
                 </android.support.v7.widget.CardView>
-            </RelativeLayout>
-            <!--<android.support.v7.widget.Toolbar
-                android:layout_below="@id/tv_title"
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="center"
-                app:layout_collapseMode="pin">
+                </android.support.v7.widget.Toolbar>-->
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="12dp">
+        /<!-- <include layout="@layout/content_main" />-->
 
-                <EditText
-                    android:id="@+id/ed_search"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:drawablePadding="4dp"
-                    android:drawableStart="@drawable/ic_search_black_24dp"
-                    android:hint="@string/search_something" />
-            </android.support.v7.widget.CardView>
-            </android.support.v7.widget.Toolbar>-->
-        </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
-
-    /<!-- <include layout="@layout/content_main" />-->
-
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <RelativeLayout
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <TextView
-                android:id="@+id/tv_featured"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginTop="@dimen/marTop_for_subtitle"
-                android:text="Featured"
-                android:textAllCaps="true"
-                android:textSize="@dimen/textSize_for_subtitle" />
-
-            <TextView
-                android:id="@+id/tv_promotions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_featured"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginTop="@dimen/marTop_for_bold"
-                android:text="Promotions"
-                android:textAllCaps="true"
-                android:textColor="@color/black_full"
-                android:textSize="@dimen/textSize_for_bold"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_see_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/tv_promotions"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="16dp"
-                android:text="See more"
-                android:textColor="@color/accent"
-                android:textSize="@dimen/textSize_for_seeMore" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_promotions_data"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_promotions"
-                android:layout_marginTop="@dimen/marTop_for_recycleView" />
-
-            <TextView
-                android:id="@+id/tv_latest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rv_promotions_data"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginTop="@dimen/marTop_for_subtitle_latter"
-                android:text="Latest"
-                android:textAllCaps="true"
-                android:textColor="@color/black_full"
-                android:textSize="@dimen/textSize_for_subtitle" />
-
-            <TextView
-                android:id="@+id/tv_burpple_guides"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_latest"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginTop="@dimen/marTop_for_bold"
-                android:text="Burpple Guides"
-                android:textAllCaps="false"
-                android:textColor="@color/black_full"
-                android:textSize="@dimen/textSize_for_bold"
-                android:textStyle="bold" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_burpple_guide_data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_burpple_guides"
-                android:layout_marginRight="@dimen/margin_right"
-                android:layout_marginTop="@dimen/marTop_for_recycleView" />
-
-            <TextView
-                android:id="@+id/tv_latest_news"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rv_burpple_guide_data"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginTop="@dimen/marTop_for_subtitle_latter"
-                android:text="Latest"
-                android:textAllCaps="true"
-                android:textColor="@color/black_full"
-                android:textSize="@dimen/textSize_for_subtitle" />
-
-            <TextView
-                android:id="@+id/tv_new_trending"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_latest_news"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginTop="@dimen/marTop_for_bold"
-                android:text="New and Trending"
-                android:textAllCaps="false"
-                android:textColor="@color/black_full"
-                android:textSize="@dimen/textSize_for_bold"
-                android:textStyle="bold" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_new_trending"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv_new_trending"
-                android:layout_marginRight="@dimen/margin_right"
-                android:layout_marginTop="@dimen/marTop_for_recycleView" />
-
-            <LinearLayout
-                android:id="@+id/ll_explore_neighbourhood"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rv_new_trending"
-                android:orientation="vertical">
-
-                <View
-                    android:id="@+id/h_separator_one"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginLeft="@dimen/margin_left"
-                    android:layout_marginTop="@dimen/margin_right"
-                    android:background="@color/divider" />
+                android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/btn_explore_neighbourhood"
+                    android:id="@+id/tv_featured"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_left"
+                    android:layout_marginTop="@dimen/marTop_for_subtitle"
+                    android:text="Featured"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/textSize_for_subtitle" />
+
+                <TextView
+                    android:id="@+id/tv_promotions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_featured"
+                    android:layout_marginLeft="@dimen/margin_left"
+                    android:layout_marginTop="@dimen/marTop_for_bold"
+                    android:text="Promotions"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_full"
+                    android:textSize="@dimen/textSize_for_bold"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_see_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/tv_promotions"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:text="See more"
+                    android:textColor="@color/accent"
+                    android:textSize="@dimen/textSize_for_seeMore" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_promotions_data"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/marbtm_for_textView"
-                    android:layout_marginLeft="@dimen/margin_left"
-                    android:layout_marginTop="@dimen/marTop_for_textView"
-                    android:drawableLeft="@drawable/ic_place_black_24dp"
-                    android:drawablePadding="@dimen/padding_for_textView"
-                    android:text="Explore Neighbourhoods"
-                    android:textColor="@color/black_full"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    android:layout_below="@id/tv_promotions"
+                    android:layout_marginTop="@dimen/marTop_for_recycleView" />
 
-            <LinearLayout
-                android:id="@+id/ll_explore_categories"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ll_explore_neighbourhood"
-                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_latest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rv_promotions_data"
+                    android:layout_marginLeft="@dimen/margin_left"
+                    android:layout_marginTop="@dimen/marTop_for_subtitle_latter"
+                    android:text="Latest"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_full"
+                    android:textSize="@dimen/textSize_for_subtitle" />
+
+                <TextView
+                    android:id="@+id/tv_burpple_guides"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_latest"
+                    android:layout_marginLeft="@dimen/margin_left"
+                    android:layout_marginTop="@dimen/marTop_for_bold"
+                    android:text="Burpple Guides"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black_full"
+                    android:textSize="@dimen/textSize_for_bold"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_burpple_guide_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_burpple_guides"
+                    android:layout_marginRight="@dimen/margin_right"
+                    android:layout_marginTop="@dimen/marTop_for_recycleView" />
+
+                <TextView
+                    android:id="@+id/tv_latest_news"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rv_burpple_guide_data"
+                    android:layout_marginLeft="@dimen/margin_left"
+                    android:layout_marginTop="@dimen/marTop_for_subtitle_latter"
+                    android:text="Latest"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_full"
+                    android:textSize="@dimen/textSize_for_subtitle" />
+
+                <TextView
+                    android:id="@+id/tv_new_trending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_latest_news"
+                    android:layout_marginLeft="@dimen/margin_left"
+                    android:layout_marginTop="@dimen/marTop_for_bold"
+                    android:text="New and Trending"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black_full"
+                    android:textSize="@dimen/textSize_for_bold"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_new_trending"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_new_trending"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        app:cardElevation="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_newly_opened"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Newly opened"
+                                android:textColor="@color/primary"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/rv_newly_opened"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_newly_opened"
+                                android:layout_marginTop="8dp" />
+
+                            <TextView
+                                android:id="@+id/divider_new_trending"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@id/rv_newly_opened"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/divider" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@id/tv_newly_opened"
+                                android:layout_below="@id/divider_new_trending"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginTop="8dp"
+                                android:text="Explore"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black_full" />
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        app:cardElevation="4dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_trending_venues"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Trending Venues"
+                                android:textColor="@color/primary"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/rv_trending_venues"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_trending_venues"
+                                android:layout_marginTop="8dp" />
+
+                            <TextView
+                                android:id="@+id/divider_trending_venues"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@id/rv_trending_venues"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/divider" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@id/tv_trending_venues"
+                                android:layout_below="@id/divider_trending_venues"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginTop="8dp"
+                                android:text="Explore"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black_full" />
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_explore_neighbourhood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_new_trending"
+                    android:orientation="vertical">
+
+                    <View
+                        android:id="@+id/h_separator_one"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="@dimen/margin_left"
+                        android:layout_marginTop="@dimen/margin_right"
+                        android:background="@color/divider" />
+
+                    <TextView
+                        android:id="@+id/btn_explore_neighbourhood"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/marbtm_for_textView"
+                        android:layout_marginLeft="@dimen/margin_left"
+                        android:layout_marginTop="@dimen/marTop_for_textView"
+                        android:drawableLeft="@drawable/ic_place_black_24dp"
+                        android:drawablePadding="@dimen/padding_for_textView"
+                        android:text="Explore Neighbourhoods"
+                        android:textColor="@color/black_full"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_explore_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_explore_neighbourhood"
+                    android:orientation="vertical">
+
+                    <View
+                        android:id="@+id/h_separator_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_for_view"
+                        android:layout_marginLeft="@dimen/margin_left"
+                        android:layout_marginTop="@dimen/margin_right"
+                        android:background="@color/divider" />
+
+                    <TextView
+                        android:id="@+id/btn_explore_categories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/marbtm_for_textView"
+                        android:layout_marginLeft="@dimen/margin_left"
+                        android:layout_marginTop="@dimen/marTop_for_textView"
+                        android:drawableLeft="@drawable/ic_restaurant_black_24dp"
+                        android:drawablePadding="@dimen/padding_for_textView"
+                        android:text="Explore Categories"
+                        android:textColor="@color/black_full"
+                        android:textSize="20sp" />
+                </LinearLayout>
 
                 <View
-                    android:id="@+id/h_separator_two"
+                    android:id="@+id/h_separator_three"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/height_for_view"
-                    android:layout_marginLeft="@dimen/margin_left"
-                    android:layout_marginTop="@dimen/margin_right"
-                    android:background="@color/divider" />
-
-                <TextView
-                    android:id="@+id/btn_explore_categories"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/marbtm_for_textView"
-                    android:layout_marginLeft="@dimen/margin_left"
+                    android:layout_below="@id/ll_explore_categories"
                     android:layout_marginTop="@dimen/marTop_for_textView"
-                    android:drawableLeft="@drawable/ic_restaurant_black_24dp"
-                    android:drawablePadding="@dimen/padding_for_textView"
-                    android:text="Explore Categories"
-                    android:textColor="@color/black_full"
-                    android:textSize="20sp" />
-            </LinearLayout>
+                    android:background="@color/divider" />
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
 
-            <View
-                android:id="@+id/h_separator_three"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_for_view"
-                android:layout_below="@id/ll_explore_categories"
-                android:layout_marginTop="@dimen/marTop_for_textView"
-                android:background="@color/divider" />
-        </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/view_pod_account_control" />
 
-    <!--<android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />-->
-
-</android.support.design.widget.CoordinatorLayout>
+</android.support.v4.widget.DrawerLayout>

@@ -7,15 +7,26 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.myanmar.tmn.buroole.R;
+import com.myanmar.tmn.buroole.data.vo.PromotionsVO;
 import com.myanmar.tmn.buroole.viewHolder.ItemPromotionViewHolder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by msi on 1/5/2018.
  */
 
-public class ItemBurpplePromotionsAdapter extends RecyclerView.Adapter {
+public class ItemBurpplePromotionsAdapter extends RecyclerView.Adapter<ItemPromotionViewHolder> {
+
+    private List<PromotionsVO> mPromotionList;
+
+    public ItemBurpplePromotionsAdapter() {
+        mPromotionList = new ArrayList<>();
+    }
+
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ItemPromotionViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View newsItems = inflater.inflate(R.layout.activity_burpple_promotions,parent,false);
@@ -24,12 +35,17 @@ public class ItemBurpplePromotionsAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(ItemPromotionViewHolder holder, int position) {
+        holder.setPromotions(mPromotionList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return mPromotionList.size();
+    }
+
+    public void setPromotions(List<PromotionsVO> mPromotionList){
+        this.mPromotionList = mPromotionList;
+        notifyDataSetChanged();
     }
 }

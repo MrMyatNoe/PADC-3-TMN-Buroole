@@ -13,12 +13,12 @@ import com.myanmar.tmn.buroole.viewHolder.ItemNewsNTrendsViewHolder;
  * Created by msi on 1/5/2018.
  */
 
-public class ItemBurppleNewsNTrendingAdapter extends RecyclerView.Adapter {
+public class ItemBurppleTrendingVenuesAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View newsItems = inflater.inflate(R.layout.activity_burpple_news_trending,parent,false);
+        View newsItems = inflater.inflate(R.layout.activity_burpple_trending_venues,parent,false);
         ItemNewsNTrendsViewHolder itemNewsNTrendsViewHolder = new ItemNewsNTrendsViewHolder(newsItems);
         return itemNewsNTrendsViewHolder;
     }
