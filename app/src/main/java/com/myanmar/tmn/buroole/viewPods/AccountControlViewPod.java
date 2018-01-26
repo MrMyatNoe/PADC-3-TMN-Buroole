@@ -21,14 +21,15 @@ import org.greenrobot.eventbus.ThreadMode;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
 /**
- * Created by msi on 1/24/2018.
+ * Created by msi on 1/21/2018.
  */
 
 public class AccountControlViewPod extends FrameLayout {
 
     @BindView(R.id.vp_before_login)
-    BeforeLoginViewPod vpBeforeLogin;
+    BeforeLoginUserViewPod vpBeforeLogin;
 
     @BindView(R.id.vp_login_user)
     LoginUserViewPod vpLoginUser;
@@ -45,20 +46,22 @@ public class AccountControlViewPod extends FrameLayout {
         super(context, attrs, defStyleAttr);
     }
 
+    //Bind butterKnife and create business logic
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        ButterKnife.bind(this,this);
+        ButterKnife.bind(this, this);
+
         refreshUserSession();
         EventBus.getDefault().register(this);
     }
 
-    public void setDelagate(BeforeLoginDelegate beforeLoginDelegate){
+    public void setDelegate(BeforeLoginDelegate beforeLoginDelegate) {
         vpBeforeLogin.setBeforeLoginDelegate(beforeLoginDelegate);
     }
 
-    public void setDelagate(LoginUserDelegate loginUserDelegate){
-        vpLoginUser.setLoginUserDelegate(loginUserDelegate);
+    public void setDelegate(LoginUserDelegate loginDelegate){
+        vpLoginUser.setDelegate(loginDelegate);
     }
 
     public void refreshUserSession() {

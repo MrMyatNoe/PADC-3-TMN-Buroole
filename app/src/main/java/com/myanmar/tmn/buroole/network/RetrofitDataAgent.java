@@ -52,6 +52,8 @@ public class RetrofitDataAgent implements GuidesDataAgent,PromotionDataAgent, Lo
         guidesApi = retrofit.create(GuidesApi.class);
 
         promotionsApi = retrofit.create(PromotionsApi.class);
+
+        loginApi = retrofit.create(LoginApi.class);
     }
 
     @Override

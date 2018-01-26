@@ -1,4 +1,3 @@
-/*
 package com.myanmar.tmn.buroole.network;
 
 import com.google.gson.Gson;
@@ -16,10 +15,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-*/
+
 /**
  * Created by msi on 1/13/2018.
- *//*
+ */
 
 
 public class PromotionsRetrofitDataAgent implements PromotionDataAgent {
@@ -72,4 +71,3 @@ public class PromotionsRetrofitDataAgent implements PromotionDataAgent {
         });
     }
 }
-*/

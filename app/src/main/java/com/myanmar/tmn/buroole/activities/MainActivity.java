@@ -2,8 +2,6 @@ package com.myanmar.tmn.buroole.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.MainThread;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -76,7 +74,6 @@ public class MainActivity extends AppCompatActivity implements BeforeLoginDelega
     private ItemBurppleTrendingVenuesAdapter itemBurppleTrendingVenuesAdapter;
 
     private AccountControlViewPod accountControlViewPod;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,10 +115,9 @@ public class MainActivity extends AppCompatActivity implements BeforeLoginDelega
         trendingVenues.setLayoutManager(venueManager);
         trendingVenues.setAdapter(itemBurppleTrendingVenuesAdapter);
 
-
         accountControlViewPod = (AccountControlViewPod) navigationView.getHeaderView(0);
-        accountControlViewPod.setDelagate((BeforeLoginDelegate) this);
-        accountControlViewPod.setDelagate((LoginUserDelegate) this);
+        accountControlViewPod.setDelegate((LoginUserDelegate) this);
+        accountControlViewPod.setDelegate((LoginUserDelegate) this);
 
         PromotionModel.getInstance().loadPromotion();
 

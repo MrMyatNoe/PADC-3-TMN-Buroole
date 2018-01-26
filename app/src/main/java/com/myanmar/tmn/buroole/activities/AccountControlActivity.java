@@ -1,3 +1,4 @@
+
 package com.myanmar.tmn.buroole.activities;
 
 import android.content.Context;
@@ -12,9 +13,11 @@ import com.myanmar.tmn.buroole.fragment.RegisterFragment;
 
 import butterknife.ButterKnife;
 
+
 /**
  * Created by msi on 1/24/2018.
  */
+
 
 public class AccountControlActivity extends AppCompatActivity {
 
@@ -51,3 +54,4 @@ public class AccountControlActivity extends AppCompatActivity {
         }
     }
 }
+

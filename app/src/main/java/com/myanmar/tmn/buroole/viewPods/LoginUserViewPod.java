@@ -1,8 +1,6 @@
 package com.myanmar.tmn.buroole.viewPods;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -19,7 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Created by msi on 1/24/2018.
+ * Created by msi on 1/14/2018.
  */
 
 public class LoginUserViewPod extends RelativeLayout {
@@ -35,15 +33,15 @@ public class LoginUserViewPod extends RelativeLayout {
 
     private LoginUserDelegate loginUserDelegate;
 
-    public LoginUserViewPod(@NonNull Context context) {
+    public LoginUserViewPod(Context context) {
         super(context);
     }
 
-    public LoginUserViewPod(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public LoginUserViewPod(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public LoginUserViewPod(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public LoginUserViewPod(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -54,7 +52,7 @@ public class LoginUserViewPod extends RelativeLayout {
     }
 
     public void bindData(LoginUserVO loginUser){
-        Glide.with(loginUserImage.getContext()).load(loginUser.getProfileUrl()).into(loginUserImage);
+       // Glide.with(loginUserImage.getContext()).load(loginUser.getProfileUrl()).into(loginUserImage);
         userName.setText(loginUser.getName());
         userPhone.setText(loginUser.getPhoneNo());
     }
@@ -64,7 +62,8 @@ public class LoginUserViewPod extends RelativeLayout {
         loginUserDelegate.onTappedLogout();
     }
 
-    public void setLoginUserDelegate(LoginUserDelegate loginUserDelegate) {
+    public void setDelegate(LoginUserDelegate loginUserDelegate){
         this.loginUserDelegate = loginUserDelegate;
     }
 }
+
